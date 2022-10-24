@@ -1,2 +1,2 @@
-# phpFundamentos
+# DWES
 Ejercicios Fundamentos PHP
