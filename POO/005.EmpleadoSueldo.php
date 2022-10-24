@@ -8,7 +8,7 @@ class Empleado{
     private array $telefonos = [];
     private static $sueldoTope = 3333;
 
-    // Constructor {nombre, apellidos}
+    // Constructor {nombre, apellidos, sueldo}
     public function __construct(
         private string $nombre,
         private string $apellidos,
