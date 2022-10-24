@@ -1,3 +1,3 @@
 # DWES 🐙
-```Ejercicios Fundamentos PHP
-```Ejercicios POO PHP
+'''Ejercicios Fundamentos PHP
+'''Ejercicios POO PHP
