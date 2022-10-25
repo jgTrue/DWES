@@ -1,23 +1,26 @@
-<!-- 007Persona.php: Copia la clase del ejercicio anterior en 307Empleado.php y 
-modifícala.Crea una clase Persona que sea padre de Empleado, de manera que 
-Persona contenga el nombre y los apellidos, y en Empleado quede el salario y los 
-teléfonos. -->
+<!-- 009PersonaE.php: Copia las clases del ejercicio anterior y modifícalas.
+Añade en Persona un atributo edad
+A la hora de saber si un empleado debe pagar impuestos, lo hará siempre y cuando 
+tenga más de 21 años y dependa del valor de su sueldo. Modifica todo el código 
+necesario para mostrar y/o editar la edad cuando sea necesario. -->
 
 <?php
-include_once('007Persona.php');
+include_once('009PersonaE.php');
 class Empleado extends Persona{
     private array $telefonos = [];
-    private static $sueldoTope = 3333;
+    public static $sueldoTope = 3333; //? PREGUNTAR SI PúBLICO O PRIVATE
 
     // Constructor {sueldo, contructorPadre(nombre, apellidos)}
     public function __construct(
         string $nombre, 
         string $apellidos,
+        int $edad,
         private float $sueldo = 1000)
         {
             parent::__construct(
                 $nombre,
-                $apellidos);
+                $apellidos,
+                $edad);
         }
     
     //Setters
@@ -49,7 +52,7 @@ class Empleado extends Persona{
 
  
     public function debePagarImpuestos(): bool{
-        return ($this->sueldo > self::$sueldoTope) ? true : false;
+        return ($this->sueldo > self::$sueldoTope && $this->edad > 21) ? true : false;
     }
 
     // Añade un teléfono al array
@@ -79,22 +82,25 @@ class Empleado extends Persona{
         return $listado;
     }
 
-    //!Se encuentra comentado porque genera conflicto con el siguiente ejercicio.
-    /*
-    public static function toHtml(Empleado $emp): string{
-        //Datos generales en un String.
-        $datosHTML = "<p>Nombre y Apellidos: ".$emp -> getNombreCompleto()."<br>
-                         Sueldo: ".$emp -> getSueldo()."<br>
-                         Impuestos: ".(($emp -> debePagarImpuestos()) ? "Sí<br>" : "No<br>").
-                        "Teléfonos:<br>";
-        //Datos de teléfonos.
-        $telefonosHTML = "<ol>".$emp -> getTelefonos()."</ol></p>";
-        //Concatenación de ambas cadenas para conseguir toHTML completo.
-        $estructuraHTML = $datosHTML.$telefonosHTML;
-        
+    public static function toHtml(Persona $p): string{
+        if($p instanceof Empleado){
+            //Datos generales en un String.
+            $datosHTML = "<p>Nombre y Apellidos: ".$p -> getNombreCompleto()."<br>
+                            Edad: ".$p -> getEdad()."<br>
+                            Sueldo: ".$p -> getSueldo()."<br>
+                            Impuestos: ".(($p -> debePagarImpuestos()) ? "Sí<br>" : "No<br>").
+                            "Teléfonos:<br>";
+            //Datos de teléfonos.
+            $telefonosHTML = "<ol>".$p -> getTelefonos()."</ol></p>";
+            //Concatenación de ambas cadenas para conseguir toHTML completo.
+            $estructuraHTML = $datosHTML.$telefonosHTML;
+            
+        }else{ //Si la persona no es un empleado se mostrará solo su nombre y apellidos.
+            $estructuraHTML = "<p>Nombre y Apellidos: ".$p -> getNombreCompleto()."<br>Edad: ".$p -> getEdad()."</p>";
+            
+        }
         return $estructuraHTML;
-        
-    }*/
+    }
 }
 
 

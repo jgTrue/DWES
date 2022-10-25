@@ -11,7 +11,7 @@ class Persona{
     // Constructor {nombre, apellidos}
     public function __construct(
         protected string $nombre,
-        protected string $apellidos,)
+        protected string $apellidos)
         {}
     
     // Getters

@@ -1,9 +1,9 @@
 <?php 
 
 
-//*TEST 002.EmpleadoTelefonos.php
+//*TEST 002EmpleadoTelefonos.php
 /*
-include_once ('002.EmpleadoTelefonos.php');
+include_once ('002EmpleadoTelefonos.php');
 
 $persona = new Empleado;
 
@@ -17,9 +17,9 @@ echo $persona -> listarTelefonos();
 */
 
 
-//*TEST 003.EmpleadoConstructor.php
+//*TEST 003EmpleadoConstructor.php
 /*
-include_once ('003.EmpleadoConstructor.php');
+include_once ('003EmpleadoConstructor.php');
 
 $persona = new Empleado("Jon", "Jones", 3000);
 $persona_2 = new Empleado("Maria", "Grace");
@@ -31,9 +31,9 @@ echo $persona_2 -> getSueldo();
 */
 
 
-//*TEST 004.EmpleadoConstante.php
+//*TEST 004EmpleadoConstante.php
 /*
-include_once ('004.EmpleadoConstante.php');
+include_once ('004EmpleadoConstante.php');
 
 $persona = new Empleado("Jon", "Jones", 6000);
 var_dump($persona -> debePagarImpuestos()); */
@@ -50,9 +50,9 @@ $persona -> setSueldoTope(7000);
 var_dump($persona -> debePagarImpuestos());
 echo "<br>Sueldo tope actual: ".$persona -> getSueldoTope();*/
 
-//*TEST 005.EmpleadoStatic.php
+//*TEST 006EmpleadoStatic.php
 /*
-include_once('006.EmpleadoStatic.php');
+include_once('006EmpleadoStatic.php');
 
 $persona = new Empleado("Jon", "Jones Evans", 6000);
 $persona -> anyadirTelefono(689515981);
@@ -67,6 +67,17 @@ echo $persona -> toHtml($persona);*/
 include ('307Empleado.php');
 
 $persona = new Empleado("Juan", "Pepe Marín", 5000);
+$persona -> anyadirTelefono(689515981);
+$persona -> anyadirTelefono(689513356);
+$persona -> anyadirTelefono(681312317);
+$persona -> anyadirTelefono(651412361);
+echo $persona -> toHtml($persona);*/
+
+//*TEST 309Empleado.php
+/*
+include_once ('309EmpleadoE.php');
+
+$persona = new Empleado("Juan", "Pepe Marín", 28, 3500);
 $persona -> anyadirTelefono(689515981);
 $persona -> anyadirTelefono(689513356);
 $persona -> anyadirTelefono(681312317);

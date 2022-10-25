@@ -5,7 +5,7 @@ parámetro. Para acceder a las propiedades del empleado con la persona que recib
 como parámetro, comprobaremos su tipo: -->
 
 <?php
-include_once('008.PersonaH.php');
+include_once('008PersonaH.php');
 class Empleado extends Persona{
     private array $telefonos = [];
     public static $sueldoTope = 3333; //? PREGUNTAR SI PúBLICO O PRIVATE
