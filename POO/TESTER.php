@@ -131,6 +131,27 @@ $persona -> calcularSueldo();
 
 echo $persona ->__toString(); */ 
 
+//*TEST 013Empresa.php
+
+/*include_once ('013Empresa.php');
+
+$emp = new Empresa("Reparaciones SL", "Sevilla");
+
+$persona = new Gerente("Aemon", "García Marín", 28, 6000);
+$persona -> anyadirTelefono(689515981);
+
+$persona1 = new Gerente("Jose", "Reyes Marín", 21);
+$persona1 -> anyadirTelefono(689515888);
+
+$persona2 = new Empleado("David", "García Lucas", 50,3500);
+$persona2 -> anyadirTelefono(689515111);
+
+$emp ->anyadirTrabajador($persona);
+$emp ->anyadirTrabajador($persona1);
+$emp ->anyadirTrabajador($persona2);
+echo $emp -> listarTrabajadoresHtml();
+echo "Coste de las nóminas: ".$emp -> getCosteNominas();
+*/
 
 
 ?>
