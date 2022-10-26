@@ -108,6 +108,29 @@ $persona -> anyadirTelefono(651412361);
 //echo $persona -> toHtml($persona);
 echo $persona ->__toString();*/
 
+//*TEST 012Empleado.php
+/* 
+include_once ('012Empleado.php');
+$persona = new Empleado("Ricky", "Pepe Marcos", 28);
+$persona -> anyadirTelefono(689515981);
+$persona -> anyadirTelefono(689513356);
+$persona -> setHorasTrabajadas(160);
+$persona -> setPrecioPorHora(25);
+$persona -> calcularSueldo();
+
+echo $persona ->__toString(); */
+
+//*TEST 012Gerente.php
+/*
+include_once ('012Gerente.php');
+$persona = new Gerente("Aemon", "García Marín", 28);
+$persona -> anyadirTelefono(689515981);
+$persona -> anyadirTelefono(689513356);
+$persona -> setSalario(5000);
+$persona -> calcularSueldo();
+
+echo $persona ->__toString(); */ 
+
 
 
 ?>
