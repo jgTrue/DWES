@@ -8,7 +8,7 @@ necesario para mostrar y/o editar la edad cuando sea necesario. -->
 include_once('009PersonaE.php');
 class Empleado extends Persona{
     private array $telefonos = [];
-    private static $sueldoTope = 3333;
+    private static $sueldoTope = 3333; //! Me lo cambió la profesora
 
     // Constructor {sueldo, contructorPadre(nombre, apellidos)}
     public function __construct(

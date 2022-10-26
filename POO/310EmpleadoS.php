@@ -1,24 +1,26 @@
-<!-- 008PersonaH.php: Copia las clases del ejercicio anterior y modifícalas. Crea en Persona 
-el método estático toHtml(Persona $p), y modifica en Empleado el mismo método 
-toHtml(Persona $p), pero cambia la firma para que reciba una Persona como 
-parámetro. Para acceder a las propiedades del empleado con la persona que recibimos 
-como parámetro, comprobaremos su tipo: -->
+<!-- 010PersonaS.php: Copia las clases del ejercicio anterior y modifícalas.
+Añade nuevos métodos que hagan una representación de todas las propiedades de las 
+clases Persona y Empleado, de forma similar a los realizados en HTML, pero sin que 
+sean estáticos, de manera que obtenga los datos mediante $this.
+function public __toString(): string -->
 
 <?php
-include_once('008PersonaH.php');
+include_once('010PersonaS.php');
 class Empleado extends Persona{
     private array $telefonos = [];
-    public static $sueldoTope = 3333; //! En el esquema de clases aparece público
+    private static $sueldoTope = 3333; 
 
     // Constructor {sueldo, contructorPadre(nombre, apellidos)}
     public function __construct(
         string $nombre, 
         string $apellidos,
+        int $edad,
         private float $sueldo = 1000)
         {
             parent::__construct(
                 $nombre,
-                $apellidos);
+                $apellidos,
+                $edad);
         }
     
     //Setters
@@ -50,7 +52,7 @@ class Empleado extends Persona{
 
  
     public function debePagarImpuestos(): bool{
-        return ($this->sueldo > self::$sueldoTope) ? true : false;
+        return ($this->sueldo > self::$sueldoTope && $this->edad > 21) ? true : false;
     }
 
     // Añade un teléfono al array
@@ -84,6 +86,7 @@ class Empleado extends Persona{
         if($p instanceof Empleado){
             //Datos generales en un String.
             $datosHTML = "<p>Nombre y Apellidos: ".$p -> getNombreCompleto()."<br>
+                            Edad: ".$p -> getEdad()."<br>
                             Sueldo: ".$p -> getSueldo()."<br>
                             Impuestos: ".(($p -> debePagarImpuestos()) ? "Sí<br>" : "No<br>").
                             "Teléfonos:<br>";
@@ -93,10 +96,24 @@ class Empleado extends Persona{
             $estructuraHTML = $datosHTML.$telefonosHTML;
             
         }else{ //Si la persona no es un empleado se mostrará solo su nombre y apellidos.
-            $estructuraHTML = "<p>Nombre y Apellidos: ".$p -> getNombreCompleto()."</p>";
+            $estructuraHTML = parent::toHTML($p);
             
         }
         return $estructuraHTML;
+    }
+
+    public function __toString(): string{
+        $datosToString = "<p>Nombre y Apellidos: ".$this -> getNombreCompleto()."<br>
+                            Edad: ".$this -> getEdad()."<br>
+                            Sueldo: ".$this -> getSueldo()."<br>
+                            Impuestos: ".(($this -> debePagarImpuestos()) ? "Sí<br>" : "No<br>").
+                            "Teléfonos:<br>";
+            //Datos de teléfonos.
+            $telefonosToString = "<ol>".$this -> getTelefonos()."</ol></p>";
+            //Concatenación de ambas cadenas para conseguir toHTML completo.
+            $estructuraToString = $datosToString.$telefonosToString;
+
+        return $estructuraToString;
     }
 }
 

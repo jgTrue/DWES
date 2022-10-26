@@ -73,7 +73,7 @@ $persona -> anyadirTelefono(681312317);
 $persona -> anyadirTelefono(651412361);
 echo $persona -> toHtml($persona);*/
 
-//*TEST 309Empleado.php
+//*TEST 309EmpleadoE.php
 /*
 include_once ('309EmpleadoE.php');
 
@@ -83,4 +83,31 @@ $persona -> anyadirTelefono(689513356);
 $persona -> anyadirTelefono(681312317);
 $persona -> anyadirTelefono(651412361);
 echo $persona -> toHtml($persona);*/
+
+//*TEST 310EmpleadoS.php
+
+/* 
+include_once ('310EmpleadoS.php');
+
+$persona = new Empleado("Juan", "Pepe Marín", 28, 3500);
+$persona -> anyadirTelefono(689515981);
+$persona -> anyadirTelefono(689513356);
+$persona -> anyadirTelefono(681312317);
+$persona -> anyadirTelefono(651412361);
+//echo $persona -> toHtml($persona);
+echo $persona ->__toString();*/
+
+//*TEST 311EmpleadoA.php
+/* 
+include_once ('311EmpleadoA.php');
+$persona = new Empleado("Juan", "Pepe Marín", 28, 3500);
+$persona -> anyadirTelefono(689515981);
+$persona -> anyadirTelefono(689513356);
+$persona -> anyadirTelefono(681312317);
+$persona -> anyadirTelefono(651412361);
+//echo $persona -> toHtml($persona);
+echo $persona ->__toString();*/
+
+
+
 ?>
