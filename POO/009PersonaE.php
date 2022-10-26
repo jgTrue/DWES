@@ -42,7 +42,7 @@ class Persona{
         return $this->nombre." ".$this->apellidos;
     }
 
-    public static function toHTML(Persona $p) : string{ //? PREGUNTAR, NO SÉ SI ES NECESARIO RELLENARLO O DEJARLO VACIO.
+    public static function toHTML(Persona $p) : string{ 
        
         $estructuraHTML = "<p>Nombre y Apellidos: ".$p -> getNombreCompleto()."<br>Edad: ".$p -> getEdad()."</p>";
         

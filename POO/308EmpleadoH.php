@@ -8,7 +8,7 @@ como parámetro, comprobaremos su tipo: -->
 include_once('008PersonaH.php');
 class Empleado extends Persona{
     private array $telefonos = [];
-    public static $sueldoTope = 3333; //? PREGUNTAR SI PúBLICO O PRIVATE
+    public static $sueldoTope = 3333;
 
     // Constructor {sueldo, contructorPadre(nombre, apellidos)}
     public function __construct(

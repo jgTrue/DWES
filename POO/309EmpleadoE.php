@@ -8,7 +8,7 @@ necesario para mostrar y/o editar la edad cuando sea necesario. -->
 include_once('009PersonaE.php');
 class Empleado extends Persona{
     private array $telefonos = [];
-    public static $sueldoTope = 3333; //? PREGUNTAR SI PúBLICO O PRIVATE
+    private static $sueldoTope = 3333;
 
     // Constructor {sueldo, contructorPadre(nombre, apellidos)}
     public function __construct(
@@ -96,7 +96,7 @@ class Empleado extends Persona{
             $estructuraHTML = $datosHTML.$telefonosHTML;
             
         }else{ //Si la persona no es un empleado se mostrará solo su nombre y apellidos.
-            $estructuraHTML = "<p>Nombre y Apellidos: ".$p -> getNombreCompleto()."<br>Edad: ".$p -> getEdad()."</p>";
+            $estructuraHTML = parent::toHTML($p);
             
         }
         return $estructuraHTML;
