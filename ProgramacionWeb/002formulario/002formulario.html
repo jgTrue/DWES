@@ -1,0 +1,135 @@
+<!-- 002formulario.html/.php: Crea un formulario que solicite:
+Nombre y apellidos. Email. URL página personal. Sexo (radio). Número de convivientes 
+en el domicilio. Aficiones (checkboxes) – poner mínimo 4 valores.
+Menú favorito (lista selección múltiple) – poner mínimo 4 valores.
+Muestra los valores cargados en una tabla-resumen. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <script defer src="../js/bootstrap.bundle.js"></script>
+    <script defer src="../js/bootstrap.js"></script>
+    <script defer src="../js/custom.js"></script>
+
+    <title>002formulario</title>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand fs-3 mx-5 my-2" href="01post.html">
+                <i class="bi bi-filetype-php mx-3 p-2">002formulario.html</i>
+            </a>
+        </nav>
+    </header>
+    <!-- Formulario -->
+    <div class="container my-5 justify-content-center">
+        <form action="002formulario.php" method="post">
+        
+        <!-- Título -->
+        <h3>Formulario</h3>
+
+        <!-- Nombre input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="firstName">Nombre:</label>
+            <input type="text" id="firstName" class="form-control" name="firstName" required/>
+        </div>
+        
+        <!-- Apellidos input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="lastName">Apellidos:</label>
+            <input type="text" id="lastName" class="form-control" name="lastName" required/>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="mail">Direccion e-mail:</label>
+            <input type="email" id="mail" class="form-control" name="mail" required/>
+        </div>
+
+        <!-- Url input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="urlPersonal">Url página personal:</label>
+            <input type="url" id="urlPersonal" class="form-control" name="urlPersonal" required/>
+        </div>
+
+        <hr> <!-- Separador -->
+
+        <!-- Sex input -->
+        <p class="form-label my-1">Sexo:</p>
+        <section class="mx-5 mb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sex" id="hSex" value="hombre" checked>
+                <label class="form-check-label" for="hSex">
+                Hombre.
+                </label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" id="fSex" value="mujer">
+                <label class="form-check-label" for="fSex">
+                Mujer.
+                </label>
+            </div>
+        </section>
+
+        <!-- Nº convivientes -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="nConviviente">Número de convivientes en el domicilio:</label>
+            <input min=1 type="number" id="nConviviente" class="form-control" name="nConviviente" required/>
+        </div>
+
+        <!-- Aficiones input -->
+        <p class="form-label my-1">Aficiones:</p>
+        <section class="mx-5 mb-4">
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" value="programación" id="aficion1" name="aficion1">
+                <label class="form-check-label" for="aficion1">
+                Programación
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" value="videojuegos" id="aficion2" name="aficion2">
+                <label class="form-check-label" for="aficion2">
+                Videojuegos
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" value="deportes" id="aficion3" name="aficion3">
+                <label class="form-check-label" for="aficion3">
+                Deportes
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" value="festivales" id="aficion4" name="aficion4">
+                <label class="form-check-label" for="aficion4">
+                Festivales
+                </label>
+            </div>
+        </section>
+
+        <!-- Menú favorito -->
+        <p class="form-label my-1">Menú favorito:</p>
+        <section>
+            <select class="form-select mx-5 mb-4" multiple="true" id="menulist" name="menu[]">
+                <option id="arroz" value="arroz">Arroz</option>
+                <option id="adobo" value="adobo">Adobo</option>
+                <option id="serranito" value="serranito">Serranito</option>
+                <option id="Solomillo" value="solomillo">Solomillo</option>
+            </select>
+        </section>
+        <hr> <!-- Separador -->
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
