@@ -1,0 +1,13 @@
+.preview{
+    width: 200px;
+    cursor: pointer;
+    border: solid 1px white;
+}
+table{
+    background-color: black;
+}
+
+#view{
+    height: 790px;
+}
+

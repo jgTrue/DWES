@@ -1,0 +1,23 @@
+<!-- Etiqueta en comentario: ¿Qué muestra este código? -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        let body = document.body;
+        body.innerHTML = "<!--" + body.tagName + "-->";
+        alert( body.firstChild.data); // ¿qué hay aquí?
+        /* Introduce un comentario con la palabra body, la propiedad tagName, es el nombre de la etiqueta en mayúsculas.
+        El comentario se introduce en el documento, es el primer elemento del 'body'. Al realizar alert del primer hijo
+        accedemos a un objeto comentario, con la propiedad data se accede al contenido del comentario.
+        */
+
+    </script>
+</body>
+</html>

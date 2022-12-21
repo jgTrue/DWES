@@ -1,0 +1,21 @@
+.container ul {
+    margin: 0;
+    padding-left: 1em;
+    list-style: none;
+    display: none;
+}
+
+.container.show ul {
+    display: flex;
+    flex-flow: column; 
+}
+
+.container .display::before {
+    content: '▶ ';
+    color: green;
+}
+.container.show .display::before {
+    content: '▼ ';
+}
+
+
