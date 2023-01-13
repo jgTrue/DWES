@@ -1,0 +1,10 @@
+.table-bordered, .table-bordered thead tr th{
+    padding: 1em;
+    margin: 1.5em;
+}
+
+ .table-bordered tbody tr td, .table-bordered tbody tr th {
+    padding: 1em;
+    margin: 1.5em;
+    text-align: center;
+}
